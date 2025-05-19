@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: beachday;
+  src: url(beachday.otf);
+}
+
+h1 {
+  font-family: beachday;
+  font-size: 3rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: aliceblue;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+}
+.lg{
+  display: inherit;
+  position: relative;
+  left: 32px;
+  top: 8px;
+  padding: 2px;
+}
+.gtac{
+  font-size: 2.6rem;
+}
+.contt{
+  display: flex;
+  justify-content: center;
+}
+
+.ac {
+  text-align: center;
+  padding: 10px;
+  color: #0d47a1;
+}
+
+.tac {
+  width: 60px;
+}
+body {
+  z-index: -1;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family:beachday;
+  scroll-behavior: smooth;
+  background-color: #111;
+  color: white;
+}
+
+.container {
+  width: 100%;
+}
+
+.scene {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* move text to top */
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
+  opacity: 0.3;
+  transition: opacity 0.6s ease-out;
+  background: linear-gradient(to bottom, #222, #111);
+}
+.right{
+  text-align: center;
+  background-color: #1976d2;
+  border-radius: 0%;
+}
+.scene h1 {
+  margin-top: 4rem;
+  font-size: 2.5rem;
+}
+
+.scene p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.menu{
+  display: none;
+}
+
+.scene.active {
+  opacity: 1;
+  background: linear-gradient(to bottom, #0d47a1, #1976d2);
+}
+.chapImg{
+    position: relative;
+    top: -8px;
+    z-index: 0;
+}
+.pic{
+    width: 340px;
+}
+
+.pic1{
+  width: 400px;
+  height: auto;
+}
+
+/* screens */
+@media only screen and (max-width: 302px) {
+  .txt{
+    display: none;
+  }
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 70px;
+    top: 32px;
+    font-family: beachday;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .txt{
+    display: none;
+  }
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 110px;
+    top: 30px;
+    font-family: beachday;
+  }
+
+  .pic{
+    margin-top: 34px;
+  }
+    .chapImg{
+        top:auto;
+    }
+}
+@media only screen and (max-width: 414px) {
+  .txt{
+    display: none;
+  }
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 70px;
+    top: 32px;
+    font-family: beachday;
+  }
+    .chapImg{
+        top: auto;
+    }
+}
+@media only screen and (max-width: 430px) {
+  .txt{
+    display: none;
+  }
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 115px;
+    top: 30px;
+    font-family: beachday;
+  }
+    .chapImg{
+        top:auto;
+    }
+}
+@media only screen and (max-width: 390px) {
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 70px;
+    top: 32px;
+    font-family: beachday;
+  }
+    .chapImg{
+        top:auto;
+    }
+    .txt{
+      display: none;
+    }
+}
+@media only screen and (max-width: 375px) {
+  
+  .txt{
+    display: none;
+  }
+  .contt{
+    justify-content: start !important;
+  }
+  .menu{
+    display: block;
+    color: #0d47a1;
+    position: relative;
+    left: 70px;
+    top: 32px;
+    font-family: beachday;
+  }
+    .chapImg{
+        top: auto;
+    }
+    .pic{
+        width: 180px;
+        height: 200px;
+    }
+}
+/* 
+menu */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+a{
+  text-decoration: underline;
+  font-size: 25px;
+  padding: 3px;
+  color: #0d47a1;
+}
+
+a:hover{
+  color: #1976d2;
+}
+
+.contt{
+  justify-content: center;
+}
+.txt{
+  position: relative;
+  display: flex;
+  top: 33px;
+  flex-direction: auto;
+}
+}
